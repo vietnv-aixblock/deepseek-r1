@@ -1,0 +1,1 @@
+https://huggingface.co/blog/huseinzol05/2d-parallelism-ray-pytorch
