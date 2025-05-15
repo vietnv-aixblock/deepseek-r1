@@ -1,9 +1,11 @@
-import gradio as gr
-import torch
 from dataclasses import asdict, dataclass
 from textwrap import dedent
 from types import SimpleNamespace
+
+import gradio as gr
+import torch
 from loguru import logger
+
 # Log in to Hugging Face Hub
 from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')
 

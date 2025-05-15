@@ -1,12 +1,13 @@
 import argparse
+import timeit
+
+import horovod.torch as hvd
+import numpy as np
 #import torch.backends.cudnn as cudnn
 import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data.distributed
 from torchvision import models
-import horovod.torch as hvd
-import timeit
-import numpy as np
 
 # Benchmark settings
 parser = argparse.ArgumentParser(description='PyTorch Synthetic Benchmark',
@@ -120,6 +121,7 @@ def start_bench():
 
 if __name__ == '__main__':
     from horovod.ray import RayExecutor
+
     import ray
 
     ray.init()

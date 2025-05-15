@@ -1,13 +1,13 @@
-import torch
-import torch.nn.functional as F
-from torch.utils.data import Dataset, DataLoader
-from datautils import MyTrainDataset
-
-import torch.multiprocessing as mp
-from torch.utils.data.distributed import DistributedSampler
-from torch.nn.parallel import DistributedDataParallel as DDP
-from torch.distributed import init_process_group, destroy_process_group
 import os
+
+import torch
+import torch.multiprocessing as mp
+import torch.nn.functional as F
+from datautils import MyTrainDataset
+from torch.distributed import destroy_process_group, init_process_group
+from torch.nn.parallel import DistributedDataParallel as DDP
+from torch.utils.data import DataLoader, Dataset
+from torch.utils.data.distributed import DistributedSampler
 
 
 def ddp_setup(rank, world_size):

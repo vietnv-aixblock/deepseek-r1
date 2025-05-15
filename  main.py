@@ -1,14 +1,16 @@
-import json
-import os
 import argparse
+import json
 import logging
 import logging.config
-
+import os
 
 from aixblock_ml.api import init_app
-from model import MyModel
+from flask import (Flask, abort, jsonify, request, send_file,
+                   send_from_directory)
 from flask_cors import CORS
-from flask import Flask, jsonify, send_from_directory, send_file, request, abort
+
+from model import MyModel
+
 # from werkzeug.middleware.proxy_fix import ProxyFix
 
 _DEFAULT_CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'config.json')

@@ -1,7 +1,8 @@
-from langchain_huggingface.llms import HuggingFacePipeline
-from langchain.prompts import PromptTemplate
 # from langchain.chains import LLMChain
 import re
+
+from langchain.prompts import PromptTemplate
+from langchain_huggingface.llms import HuggingFacePipeline
 
 
 def qa_with_context(model, context, question):

@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
-from torch.utils.data import Dataset, DataLoader
 from datautils import MyTrainDataset
+from torch.utils.data import DataLoader, Dataset
 
 
 class Trainer:

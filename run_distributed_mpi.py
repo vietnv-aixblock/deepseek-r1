@@ -1,10 +1,11 @@
+import argparse
 import os
+
 import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
 from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
-import argparse
+
 # from safetensors.torch import load_model
 
 parser = argparse.ArgumentParser(description='AIxBlock')
@@ -41,13 +42,12 @@ import argparse
 
 import evaluate
 import torch
+from accelerate import Accelerator, DistributedType
 from datasets import load_dataset
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, get_linear_schedule_with_warmup, set_seed
-
-from accelerate import Accelerator, DistributedType
-
+from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
+                          get_linear_schedule_with_warmup, set_seed)
 
 ########################################################################
 # This is a fully working simple example to use Accelerate

@@ -1,10 +1,9 @@
 import requests
-from requests.auth import HTTPBasicAuth
-
 from grafana_api.grafana_face import GrafanaFace
-
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 from prometheus_client.exposition import basic_auth_handler
+from requests.auth import HTTPBasicAuth
+
 GRAFANA_URL = '149.28.73.86:9091'
 PROMETHUS_URL = '149.28.73.86:9001'
 GRAFANA_API = '149.28.73.86:3000'

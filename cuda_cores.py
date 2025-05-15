@@ -1,11 +1,11 @@
 import ctypes
 import json
+import platform
+import re
+import subprocess
 from functools import wraps
 from typing import Any, Dict, List
 from warnings import warn
-import subprocess
-import re
-import platform
 
 # Constants from cuda.h
 CUDA_SUCCESS = 0

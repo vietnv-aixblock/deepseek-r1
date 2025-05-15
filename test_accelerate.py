@@ -6,26 +6,24 @@
 # jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0
 # https://github.com/huggingface/accelerate/issues/1239
 
-import torch, os
-from datasets import load_dataset
-from peft import LoraConfig, prepare_model_for_kbit_training
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    BitsAndBytesConfig,
-    TrainingArguments,
-)
-from trl import SFTTrainer
 import argparse
 import json
+import os
 
-from logging_class import start_queue, write_log, stop_log
+import torch
+import wandb
+from datasets import load_dataset
+from peft import LoraConfig, prepare_model_for_kbit_training
+from transformers import (AutoModelForCausalLM, AutoTokenizer,
+                          BitsAndBytesConfig, TrainingArguments)
+from trl import SFTTrainer
 
+from logging_class import start_queue, stop_log, write_log
 
 from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')
-import wandb
 wandb.login('allow',"69b9681e7dc41d211e8c93a3ba9a6fb8d781404a")
 import os
+
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
